@@ -188,8 +188,8 @@ def update_data():
     print("\n1. Update Nama\n2. Update Nomor")
     usr_opsi = input("Masukkan Data Yang Ingin Di Update [1,2]\t: ")
     match usr_opsi:
-        case "1": nama = input("Masukkan Nama Baru Baru\t: ")
-        case "2": nomor = input("Masukkan Nomor Baru Baru\t: ")
+        case "1": nama = input("Masukkan Nama Baru\t: ")
+        case "2": nomor = input("Masukkan Nomor Baru\t: ")
 
     tagihan = tagihan.replace("\n","")
     
