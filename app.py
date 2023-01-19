@@ -11,15 +11,21 @@ TEMPLATE = {
 
 # Menu Awal
 def menu():
-    os.system("clear")
+    os.system("cls")
     print("Selamat Datang Di Program".center(60))
     print("Pemabyaran/Daftar Wifi".center(59) + "\n")
-    print("1. Masuk Sebagai Customer")
-    print("2. Masuk Sebagai Admin")
+    print("""
+            ===================================
+            | Nomer | Menu                    |
+            ===================================
+            |   1   | Masuk Kemenu User       |
+            |   2   | Masuk Kemenu Admin      |
+            ===================================
+            """)
 
 # Read Paket
 def read_produk():
-    os.system("clear")
+    os.system("cls")
     daftar_paket = glob.glob('paket wifi/*.txt')    
     pjng_file = len(daftar_paket)
 
@@ -40,7 +46,7 @@ def read_produk():
 # User Memilih Paket dan Kecepatan Wifinya
 def pilih_paket():
     paket_yg_dipilih = input("Masukkan Nama Paket\t: ") + ".txt"
-    os.system("clear")
+    os.system("cls")
     with open(paket_yg_dipilih,"r") as file:
         data = file.readlines()
         pjng = len(data)
@@ -65,7 +71,7 @@ def pilih_paket():
 
 # Menyimpan Pesanan Kedalam File data.txt
 def simpan_pesanan(pilihan, paket_yg_dipilih):
-    os.system("clear")
+    os.system("cls")
     nama = input("Masukkan Nama Anda       : ")
     nomor = input("Masukkan Nomor Hp Anda   : ")
 
@@ -97,7 +103,7 @@ def simpan_pesanan(pilihan, paket_yg_dipilih):
 
 # Print Data Customer dan Paket Yang Di pesan
 def struk_belanja(nama, nomor, kecepatan_wifi, tagihan):
-    os.system("clear")
+    os.system("cls")
     print("="*17)
     print("Berikut Data Anda")
     print("="*17)
@@ -113,14 +119,20 @@ def struk_belanja(nama, nomor, kecepatan_wifi, tagihan):
 
 # Menu Admin
 def menu_admin():
-    os.system("clear")
+    os.system("cls")
     print("Selamat Datang Di Program".center(60))
-    print("Pemabyaran/Daftar Wifi".center(59) + "\n")
-    print("1. Read Data")
-    print("2. Sort Data")
-    print("3. Update Data")
-    print("4. Delete Data")
-    print("5. Exit")
+    print("Pembayaran/Daftar Wifi".center(59) + "\n")
+    print("""
+            ===================================
+            | Nomer | Menu                    |
+            ===================================
+            |   1   | Read Data               |
+            |   2   | Sort Data               |
+            |   3   | Update Data             |
+            |   4   | Delete Data             |
+            |   5   | Exit                    |
+            ===================================
+            """)
 
 # Read Seluruh Data Dalam file data.txt   
 def read_data():
@@ -189,7 +201,7 @@ def update_data():
     usr_opsi = input("Masukkan Data Yang Ingin Di Update [1,2]\t: ")
     match usr_opsi:
         case "1": nama = input("Masukkan Nama Baru\t: ")
-        case "2": nomor = input("Masukkan Nomor Baru\t: ")
+        case "2": nomor = input("Masukkan Nomor Handphone Baru\t: ")
 
     tagihan = tagihan.replace("\n","")
     
@@ -209,7 +221,7 @@ def update_data():
 # cancel Data
 def cancel_pesanan():
     read_data()
-    pilih = int(input("Masukkan No Data Yang Ingin Di Delete\t: "))
+    pilih = int(input("Masukkan Nomer Data Yang Ingin Di Delete\t: "))
     pilih-=1
     
     with open("data.txt","r") as file:
@@ -225,7 +237,7 @@ def cancel_pesanan():
     tagihan = data_split[3].replace(" ", "")
     struk_belanja(nama, nomor, mbps, tagihan)
 
-    opsi = input("Yakin Ingin Dihapus (y/t)\t: ")
+    opsi = input("Yakin Ingin Dihapus (y/n)\t: ")
 
     if opsi == "y":
         with open("data.txt","r") as file:

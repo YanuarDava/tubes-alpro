@@ -1,5 +1,1 @@
-lemon                                             ,6                                                 ,100Mbps                                           ,795                                               
-lalat                                             ,10                                                ,100Mbps                                           ,795                                               
-mumun                                             ,12                                                ,100Mbps                                           ,795                                               
-agung                                             ,5678900                                           ,100Mbps                                           ,795                                               
-apa                                              ,085850811936                                      ,100 Mbps                                          ,795                                               
+Yanuar                                            ,085850811936                                      ,30 Mbps                                           ,275                                               
